@@ -1,20 +1,23 @@
 <template>
   <div class="search">
+    <h1>Search for movies</h1>
+    <div class="input-wrapper">
+      <input type="text"
+        v-model="title"
+        @keyup="search(title)"
+        name=""
+        value=""
+        placeholder="Search for...">
+    </div>
 
-    <input type="text"
-      v-model="title"
-      @keyup="search(title)"
-      name=""
-      value=""
-      placeholder="Search for...">
-
-    <ul>
+    <div class="items">
       <item
         v-for="movie in movies"
         :key="movie.imdbID"
         :item="movie">
       </item>
-    </ul>
+    </div>
+
   </div>
 </template>
 
@@ -59,29 +62,55 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
+
+.search h1 {
+  text-align: center;
+  color: white;
+}
+
+.items {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.input-wrapper {
+  text-align: center;
+  margin-bottom: 50px;
+}
 
 input {
   width: 45%;
   padding: 15px;
   font-size: 1rem;
+  border: none;
+  font-style: italic;
+  background-color: rgba(0,0,0,0.1);
+  color: white;
 }
 
 input:focus {
-
+  outline: none !important;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+input::-webkit-input-placeholder {
+  font-style: italic;
+  color:white;
+}
+input::-moz-placeholder          {
+  font-style: italic;
+  color:white;
+}
+input:-moz-placeholder           {
+  font-style: italic;
+  color:white;
+}
+input:-ms-input-placeholder      {
+  font-style: italic;
+  color:white;
 }
 
-li {
-  margin: 0 10px;
-}
 
-a {
-  color: #42b983;
-}
 </style>
