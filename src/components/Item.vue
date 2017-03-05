@@ -84,7 +84,8 @@ a {
 }
 
 img {
-  height: 200px;
+  max-height: 200px;
+  max-width: 150px;
 }
 
 .info {
