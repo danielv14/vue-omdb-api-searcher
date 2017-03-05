@@ -23,6 +23,15 @@ class OMDb {
     return axios.get(`http://www.omdbapi.com/?s=${title}&plot=full&type=movie`)
   }
 
+  /*
+  Get all info from OMDb APi by id
+  @param {string} id - the IMDb id to query API with
+  @return {object} the response containing information about the movie
+   */
+  static details (id) {
+    return axios.get(`http://www.omdbapi.com/?i=${id}`)
+  }
+
 }
 
 // Export Search class
