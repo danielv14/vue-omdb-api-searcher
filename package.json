@@ -9,6 +9,13 @@
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src"
   },
+  "keywords": [
+    "Vue.js",
+    "vue-cli",
+    "es2015",
+    "es6",
+    "OMDb API"
+  ],
   "dependencies": {
     "axios": "^0.15.3",
     "vue": "^2.2.1"
