@@ -17,10 +17,11 @@ class OMDb {
   /*
   Search OMDb API for movie titles
   @param {string} title - the title to search for
+  @param {string} type - type to search for. Can be movie or series
   @return {object} The response containing movie(es)
    */
-  static searchFor (title) {
-    return axios.get(`http://www.omdbapi.com/?s=${title}&plot=full&type=movie`)
+  static searchFor (title, type) {
+    return axios.get(`http://www.omdbapi.com/?s=${title}&plot=full&type=${type}`)
   }
 
   /*
