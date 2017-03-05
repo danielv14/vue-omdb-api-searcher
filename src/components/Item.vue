@@ -13,7 +13,7 @@
         </div>
         <div class="details-secondary">
           <p>
-            <i class="fa fa-tags" aria-hidden="true"></i> {{ omdbObject.Genre }}
+            {{ omdbObject.Genre }}
             <br>
             <i class="fa fa-star" aria-hidden="true"></i> {{ omdbObject.imdbRating }}
             <br>
