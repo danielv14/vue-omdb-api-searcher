@@ -136,5 +136,4 @@ input[type=text]:-ms-input-placeholder      {
   color:white;
 }
 
-
 </style>

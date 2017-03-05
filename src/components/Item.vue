@@ -1,4 +1,5 @@
 <template lang="html">
+  <transition name="custom" enter-active-class="animated fadeIn"  leave-active-class="animated fadeOut">
   <div class="item">
     <div class="image">
         <img v-if="omdbObject.Poster != 'N/A'" :src="omdbObject.Poster" :alt="omdbObject.Title">
@@ -23,6 +24,7 @@
       </div>
     </div>
   </div>
+  </transition>
 </template>
 
 <script>
@@ -107,7 +109,5 @@ img {
 .details-secondary {
   color: gray;
 }
-
-
 
 </style>
