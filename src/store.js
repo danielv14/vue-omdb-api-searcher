@@ -25,6 +25,7 @@ const store = new Vuex.Store({
         .then((response) => {
           // loop though the response and do a detailed api call for each item
           response.data.Search.forEach(item => {
+            // look up all the details about an item, looking by IMDb ID
             OMDb.details(item.imdbID)
               .then((response) => {
                 // push each item to the store
