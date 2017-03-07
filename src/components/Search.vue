@@ -54,8 +54,6 @@ export default {
   color: white;
 }
 
-
-
 div.input-wrapper {
   text-align: center;
   margin-bottom: 50px;

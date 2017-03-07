@@ -9,6 +9,7 @@ const store = new Vuex.Store({
   state: {
     items: []
   },
+
   actions: {
     /*
     Search OMDb API
@@ -32,6 +33,7 @@ const store = new Vuex.Store({
         })
     }
   },
+
   mutations: {
     /*
     Push movie/series object to store
@@ -42,6 +44,7 @@ const store = new Vuex.Store({
       state.items.push(object)
     }
   },
+
   getters: {
     /*
     Get all the search results from the store
@@ -51,6 +54,7 @@ const store = new Vuex.Store({
       return state.items
     }
   },
+
   modules: {
   }
 })
