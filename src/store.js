@@ -13,8 +13,9 @@ const store = new Vuex.Store({
   actions: {
     /*
     Search OMDb API
-    @param {string} title - the title to search for
-    @param {string} type - the type to search for (movie/series)
+    @param {object} context - the store context
+    @param {string} title   - the title to search for
+    @param {string} type    - the type to search for (movie/series)
      */
     search (context, {title, type}) {
       // firstly clear the items to not get search results from different titles
