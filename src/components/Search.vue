@@ -9,7 +9,6 @@
         value=""
         placeholder="Search for...">
     </div>
-
     <div class="radio-buttons">
       <input @click="search()" type="radio" id="movie" value="movie" v-model="type">
       <label for="movie">Movies</label>
@@ -17,28 +16,12 @@
       <label for="series">Series</label>
     </div>
 
-    <div class="items">
-      <item
-        v-for="item in items"
-        :key="item.imdbID"
-        :item="item">
-      </item>
-    </div>
-
   </div>
 </template>
 
 <script>
-
-import OMDb from '../utility/OMDb.js'
-import Item from './Item'
-
 export default {
   name: 'search',
-
-  components: {
-    Item
-  },
 
   data () {
     return {
@@ -49,23 +32,17 @@ export default {
   },
 
   methods: {
-
     /*
     Search the OMDb API and set vue data object
     @param {string} title - The movie title to search for
      */
     search () {
-      // Prevent searching on just 2 characters
+      // No need to search if the search string is too short
       if (this.title.length > 2) {
-        OMDb.searchFor(this.title, this.type)
-          .then((response) => {
-            this.items = response.data.Search
-          })
-      } else { // else clear search result
-        this.items = ''
+        // dispatch action to store and pass title and type to search for
+        this.$store.dispatch('search', {'title': this.title, 'type': this.type})
       }
     }
-
   }
 }
 </script>
@@ -77,12 +54,7 @@ export default {
   color: white;
 }
 
-.items {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
+
 
 div.input-wrapper {
   text-align: center;

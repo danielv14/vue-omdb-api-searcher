@@ -1,17 +1,20 @@
 <template>
   <div id="app">
     <search></search>
+    <items></items>
   </div>
 </template>
 
 <script>
 
 import Search from './components/Search'
+import Items from './components/Items'
 
 export default {
   name: 'app',
   components: {
-    Search
+    Search,
+    Items
   }
 }
 </script>
