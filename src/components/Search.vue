@@ -15,7 +15,6 @@
       <input @click="search()" type="radio" id="series" value="series" v-model="type">
       <label for="series">Series</label>
     </div>
-
   </div>
 </template>
 
